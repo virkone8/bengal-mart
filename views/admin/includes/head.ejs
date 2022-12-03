@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%=titlePage%></title>
+    <script
+      src="https://kit.fontawesome.com/7ea3d0cd77.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/admin/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="/admin/images/logo.png" alt="logo" />
+            <h2>Bengal<span class="danger">Mart</span></h2>
+          </div>
+          <div class="close" id="close-btn">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+        <div class="sidebar">
+          <a href="/admin/adminDashBoard" class="<%= path === '/admin/adminDashBoard' ? 'active' : '' %>">
+            <i class="fa-solid fa-table-cells-large"></i>
+            <h3>Dashboard</h3>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-user"></i>
+            <h3>Customers</h3>
+          </a>
+          <a href="/admin/orders" class="<%= path === '/admin/orders' ? 'active' : '' %>">
+            <i class="fa-solid fa-basket-shopping"></i>
+            <h3>Orders</h3>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-chart-line"></i>
+            <h3>Analytics</h3>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-envelope"></i>
+            <h3>Messages</h3>
+            <span class="message-count">26</span>
+          </a>
+          <a href="/admin/products" class="<%= path === '/admin/products' ? 'active' : '' %>">
+            <i class="fa-solid fa-file-pen"></i>
+            <h3>Products</h3>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-bug-slash"></i>
+            <h3>Reports</h3>
+          </a>
+          <a href="/admin/add-product" class="<%= path === '/admin/add-product' ? 'active' : '' %>">
+            <i class="fa-solid fa-plus"></i>
+            <h3>Add Product</h3>
+          </a>
+          <a href="/admin/logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <h3>LogOut</h3>
+          </a>
+        </div>
+      </aside>
+      <!--------------------- End Of ASIDE ---------------->
+      <main>
+        <h1>Dashboard</h1>
+        <div class="date">
+          <input type="date" />
+        </div>
+
+        <div class="insights">
+          <div class="sales">
+            <i class="fa-solid fa-sleigh"></i>
+            <div class="middle">
+              <div class="left">
+                <h3>Total Sales</h3>
+                <h1>$25,014</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+                </svg>
+                <div class="number">
+                  <p>81%</p>
+                </div>
+              </div>
+            </div>
+            <small class="text-muted">Last 24 Hours</small>
+          </div>
+          <!----------------- END OF SALES ----------------->
+          <div class="expenses">
+            <i class="fa-solid fa-chart-column"></i>
+            <div class="middle">
+              <div class="left">
+                <h3>Total Expenses</h3>
+                <h1>$14,160</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+                </svg>
+                <div class="number">
+                  <p>62%</p>
+                </div>
+              </div>
+            </div>
+            <small class="text-muted">Last 24 Hours</small>
+          </div>
+          <!-------------------- END OF EXPENSES------------------------ -->
+          <div class="income">
+            <i class="fa-solid fa-chart-line"></i>
+            <div class="middle">
+              <div class="left">
+                <h3>Total Income</h3>
+                <h1>$10,864</h1>
+              </div>
+              <div class="progress">
+                <svg>
+                  <circle cx="38" cy="38" r="36"></circle>
+                </svg>
+                <div class="number">
+                  <p>44%</p>
+                </div>
+              </div>
+            </div>
+            <small class="text-muted">Last 24 Hours</small>
+          </div>
+          <!--------------------- END OF INCOME-------------------->
+        </div>
+        <!-- --------------------END OF INSIGHTS--------- -->
+     

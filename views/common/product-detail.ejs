@@ -1,0 +1,48 @@
+<%-include('../includes/headDetail.ejs')%>
+
+<div style="height: 100px;"></div>
+
+
+<div class="cotainer">
+  <div class="row rown" style="height: 100vh;">
+    <div class="col-md column-1">
+      <div class="visual">
+        <img src="../../<%=product.imageUrl%>" alt="productDetail">
+        <div class="flex-coly">
+            <form action="/cart" method="POST">
+              <input type="hidden" name="productId" value="<%= product._id %>">
+              <button class="btn btn-warning btny btny-c" type="submit"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+            </form>
+            <form action="/create-order" method="POST">
+              <button type="submit" class="btn btn-success btny ">
+                <i class="fa-solid fa-hand-fist"></i>
+                Order Now!
+              </button>
+            </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md column-2">
+       <h3><%=product.title%></h3>
+      <p class="special">Special price</p>
+      <h3>₹<%=product.price%> &nbsp;<span class="mdi"><del>₹2,999</del>  &nbsp; 79% off</span></h3> 
+      <br>
+      <i class="fa-solid fa-star">3.8</i> &nbsp;<span class="mdi">43,891 ratings and 4,596 reviews</span>
+      <br><br>
+      <h4>Available offers</h4>
+
+       <p><i class="fa-solid fa-tags"></i> &nbsp;Special PriceGet at flat <%=product.price%> T&C</p> 
+
+        <p><i class="fa-solid fa-tags"></i> &nbsp;Partner OfferSign up for Flipkart Pay Later and get Flipkart Gift Card worth up to ₹250* Know More</p> 
+
+       <p><i class="fa-solid fa-tags"></i> &nbsp;Bank Offer5% Cashback on Flipkart Axis Bank Card T&C</p> 
+       <br><br>
+       <h4>Product Description</h4>
+       <p class="bold"><%=product.description%></p>
+    </div>
+  </div>
+</div>
+
+<div style="height: 10px;" class="row-pad"></div>
+
+<%-include('../includes/footy.ejs')%>

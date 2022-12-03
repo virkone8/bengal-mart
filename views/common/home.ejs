@@ -1,0 +1,33 @@
+<%-include('../includes/head.ejs')%>
+    <!-- Product section -->
+<div class="container">
+    <section>
+      <div class="card cardy">
+        <div class="common-heading">
+          <div class="common-heading-left">
+            <h1>Deal of the Day</h1>
+            <h2>Bengal Mart's Exclusive</h2>
+          </div>
+          <div class="common-heading-right">
+            <button>view all</button>
+          </div>
+        </div>
+        <% if (prods.length > 0) { %>
+          <div class="owl-carousel owl-theme common-row deal">
+          <% for (let product of prods) { %>
+          <div class="common-col imagey">
+            <a href="/products/<%= product._id %>">
+            <img src="../../<%=product.imageUrl%>" alt="product" />
+            <h3><%=product.title%></h3>
+            <h6>Now<i class="fas fa-rupee-sign"></i><%=product.price%></h6>
+            </a>
+          </div>
+          <%}%>
+        </div>
+        <%} else {%>
+          <h1>All Products is Sold</h1>
+          <%}%>
+      </div>
+    </section>
+</div>
+<%-include('../includes/foot.ejs')%>

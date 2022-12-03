@@ -1,0 +1,39 @@
+<%-include('includes/head.ejs')%>
+        <div class="recent-orders">
+          <h2>Recent Orders</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Product Title</th>
+                <th>Product Id</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+        <% if (prods.length > 0) { %>
+            <tbody>
+            <% for (let product of prods) { %>
+              <tr>
+                <td><%=product.title%></td>
+                <td><%=product._id%></td>
+                <td><%=product.price%></td>
+                <td class="primary"><%=product.description%></td>
+                <td><a href="/admin/edit-product/<%= product._id %>?edit=true" class="btn2"><i class="fa-solid fa-pencil"></i></a></td>
+                <td>
+                  <form action="/admin/delete-product" method="POST">
+                      <input type="hidden" value="<%= product._id %>" name="productId">
+                      <button class="btn2 btn2-danger" type="submit"><i class="fa-solid fa-trash"></i></button>
+                  </form>
+                </td>
+              </tr>
+              <%}%>
+            </tbody>
+            <%}%>
+          </table>
+          <a href="#" class="show-btn">Show All</a>
+        </div>
+<%-include('includes/foot.ejs')%>
+
+     

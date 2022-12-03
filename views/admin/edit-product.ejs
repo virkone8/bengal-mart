@@ -1,0 +1,50 @@
+<%-include('includes/head.ejs')%>
+        <div class="recent-orders">
+            <div class="flex-containere">
+                <div class="containere">
+      <div class="form-wrap">
+        <h2><%=titlePage%></h2>
+        <form action="/admin/<% if (editing) { %>edit-product<% } else { %>add-product<% } %>" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <input
+              type="text"
+              name="title"
+              id="title"
+              placeholder="Product Title"
+              value="<% if (editing) { %><%= product.title %><% } %>"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="number"
+              name="price"
+              id="price"
+              placeholder="Product Price"
+              step="0.01" value="<% if (editing) { %><%= product.price %><% } %>"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="file"
+              name="productImage"
+              id="productImage"
+              placeholder="Product Image"
+            />
+          </div>
+          <div class="form-group">
+           <textarea name="description" id="description" rows="5" placeholder="Product Description"><% if (editing) { %><%= product.description %><% } %></textarea>
+          </div>
+
+            <% if (editing) { %>
+                <input type="hidden" value="<%= product._id %>" name="productId">
+                <input type="hidden" value="<%= product.imageUrl %>" name="product_Image">
+            <% } %>
+
+          <button type="submit"><%=titlePage%></button>
+        </form>
+      </div>
+    </div>
+        </div>
+<%-include('includes/foot.ejs')%>
+
+     

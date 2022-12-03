@@ -1,0 +1,56 @@
+<%-include('../includes/headDetail.ejs')%>
+<div style="height: 100px;"></div>
+<div class="container contain">
+  <div class="row">
+    <div class="col-2">
+      <br><br>
+      <form action="">
+          <div class="form-group">
+        <label for="priceOrder">Price Order</label><br>
+        <input type="radio" name="priceOrder" id="priceOrder" value="1"> Ascending 
+        <br>
+        <input type="radio" name="priceOrder" id="priceOrder" value="-1">Descending
+      </div>
+        <br>
+        <div class="form-group">
+        <label for="formControlRange">Price Range</label><br>
+        <input type="range" class="form-control-range" id="formControlRange" min="0" max="100000" step="1000" onInput="$('#rangeval').html($(this).val())">
+        <br>
+        ₹<span id="rangeval">50000<!-- Default value --></span>
+      </div>
+      <br><br>
+      <button type="submit" class="btn btn-info">Check It</button>
+    </form>
+    </div>
+    <div class="col-10">
+  <% if (prods.length > 0) { %>
+      <div class="container">
+        <% for (let product of prods) { %> 
+        <a href="/products/<%= product._id %>">
+            <div class="row rowish">
+              <div class="col-3">
+                <img src="../../<%=product.imageUrl%>" alt="productImage">
+              </div>
+              <div class="col-6">
+                <h3><%=product.title%></h3>
+                <br>
+                  <i class="fa-solid fa-star">3.8</i> &nbsp;<span class="mdi">43,891 ratings and 4,596 reviews</span>
+                  <br><br>
+                <h4>Product Description</h4>
+                <p class="bold"><%=product.description%></p>
+              </div>
+              <div class="col-3">
+              <h3>₹<%=product.price%> &nbsp;<span class="mdi"><del>₹2,999</del> &nbsp; 79% off</span></h3> 
+              </div>
+            </div>
+        </a>
+        <%}%>
+      </div>
+      <%} else {%>
+        <h3>All Product is Sold!</h3>
+       <%}%> 
+    </div>
+  </div>
+</div>
+<div style="height:10px;"></div>
+<%-include('../includes/footList.ejs')%>

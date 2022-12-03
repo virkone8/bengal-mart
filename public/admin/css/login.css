@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: url('/admin/images/sample.jpg') no-repeat center center/cover;
+  line-height: 1.9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+}
+
+.container {
+  max-width: 350px;
+  margin: 150px auto;
+  /* border: 1px solid red; */
+}
+
+.form-wrap {
+  background: #2d2d42;
+  opacity: 0.9;
+  border-radius: 20px;
+  border: 1px #bbb solid;
+  padding-bottom: 20px;
+}
+
+.form-wrap h2 {
+  font-weight: 400;
+  padding: 10px 20px;
+  width: 100%;
+  background: #6be2c4;
+  text-align: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  color: #333;
+}
+
+.form-wrap .form-group {
+  margin: 20px;
+  padding: 10px;
+  border-bottom: 2px solid #fff;
+}
+
+.form-wrap .form-group input {
+  border: none;
+  background: none;
+  width: 89.2%;
+  padding: 5px;
+}
+
+.form-wrap .form-group input::placeholder {
+  font-size: 16px;
+  color: #fff;
+}
+
+.form-wrap .form-group i {
+  width: 9%;
+}
+
+.form-wrap p {
+  margin: 0 20px;
+  color: #666;
+  font-weight: 400;
+}
+
+.form-wrap p a {
+  float: right;
+  text-decoration: none;
+  color: #666;
+  /* font-weight: 400; */
+}
+
+.form-wrap button {
+  display: block;
+  margin: 20px auto;
+  width: 180px;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #3aa58a;
+  color: #fff;
+  font-weight: 400;
+  cursor: pointer;
+}

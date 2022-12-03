@@ -1,0 +1,86 @@
+<%-include('../includes/headDetail.ejs')%>
+<div style="height: 100px;"></div>
+<div class="container">
+     <% if (products.length > 0) { %>
+      <% let totalPrice=0,totalQuantity=0,demoPrice=Math.random()*1000; %>
+      <%demoPrice=demoPrice.toFixed(2)%>
+  <div class="row">
+    <div class="col-9 contai">
+      <div class="flex-row">
+        <p>From Saved Address</p>
+        <input type="text" class="btn btn-light" placeholder='Enter Delivery Pincode' />
+      </div>
+      <div class="cart-list">
+      <% products.forEach(p => { %>
+        <%totalPrice+=(p.productId.price*p.quantity)%>
+        <%totalQuantity+=p.quantity%>
+         <div class="cart-item">
+           <div class="row">
+            <div class="col-4">
+              <img src="../../<%=p.productId.imageUrl%>" alt="product1" class="small-img">
+            </div>
+            <div class="col-8">
+              <h4><%=p.productId.title%></h4>
+              <p class="grey">Seller:RetailNet</p>
+              <h6><del>₹69,990</del>&nbsp; <span class="big">₹<%=p.productId.price%></span>  &nbsp;12% Off</h6>
+            </div> 
+         </div>
+         <div class="row">
+            <div class="col-12 flexx">
+              <form action="">
+                <input type="number" name="qty" id="" class="paddi" value="<%=p.quantity%>">
+                &nbsp;
+               <input type="hidden" value="<%= p.productId._id %>" name="productId">
+                <button type="submit" class="btn btn-info">SAVE FOR LATER</button>
+              </form>
+              &nbsp;&nbsp;
+               <form action="/cart-delete-item" method="POST">
+                  <input type="hidden" value="<%= p.productId._id %>" name="productId">
+                  <button class="btn btn-danger" type="submit">Delete</button>
+              </form>
+            </div>
+         </div>
+      </div>
+      <% }) %>
+    </div>
+          <div class="order-btn">
+        <form action="/create-order" method="POST">
+        <button type="submit" class="btn btn-success btny ">
+          <i class="fa-solid fa-hand-fist"></i>
+          Order Now!
+        </button>
+      </form>
+      </div>
+    </div>
+    <div class="col-3 pricy">
+      <h4 class="grayes">PRICE DETAILS</h4>
+      <hr>
+      <div class="flexm">
+        <h5>Price (<%=totalQuantity%>)</h5>
+        <h5>₹<%=+demoPrice+totalPrice%></h5>
+      </div>
+      <div class="flexm">
+        <h5 >Discount</h5>
+        <h5 class="gree">-₹<%=demoPrice%></h5>
+      </div>
+      <div class="flexm">
+        <h5>Delivery Charges</h5>
+        <h5 class="gree">Free</h5>
+      </div>
+      <hr>
+       <div class="flexm">
+        <h3>Total Amount</h3>
+        <h3>₹<%=totalPrice%></h3>
+      </div>
+      <hr>
+      <p class="gree">You will save ₹<%=demoPrice%> on this order</p>
+    </div>
+</div>
+ <% } else { %>
+    <h1>No Products in Cart!</h1>
+<% } %>
+
+</div>
+<div style="height: 10px;"></div>
+<%-include('../includes/footList.ejs')%>
+

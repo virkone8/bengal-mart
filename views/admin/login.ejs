@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+      integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/admin/css/login.css" />
+    <title><%=titlePage%></title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-wrap">
+        <h2>ADMIN LOGIN</h2>
+        <form action="/admin/login" method="POST">
+          <div class="form-group">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email ID"
+              value="<%if(cookie_data.cookieData){%><%=cookie_data.cookieData.emailCookie%><%}%>"
+            />
+          </div>
+          <div class="form-group">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+              value="<%if(cookie_data.cookieData){%><%=cookie_data.cookieData.passwordCookie%><%}%>"
+            />
+          </div>
+          <%if(errorMsg){%>
+          <div id="passHelp" class="form-text error-message"><%=errorMsg%></div>
+          <%}%>
+          <p>
+            <input type="checkbox" name="checked" id="remember" /> Remember me
+            <a href="#">Forgot Password?</a>
+          </p>
+          <button type="submit">LOGIN</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

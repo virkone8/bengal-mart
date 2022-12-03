@@ -1,0 +1,82 @@
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="margin-left:800px;"></button>
+    <div class="modal-content">
+
+      <div class="container">
+        <div class="row rowl">
+
+          <div class="col-6 imgr"></div>
+          <div class="col-6">
+            <div class="container">
+
+              <div class="form-wrap sign">
+                <h3>Sign In</h3>
+                <form action="/login" method="POST">
+                  <div class="wrapper">
+                      <div class="input-data">
+                          <input type="text" name="email" required>
+                          <div class="underline"></div>
+                          <label>Email</label>
+                      </div>
+                  </div>
+                  <br>
+                  <div class="wrapper">
+                      <div class="input-data">
+                          <input type="password" name="password" required>
+                          <div class="underline"></div>
+                          <label>Password</label>
+                      </div>
+                  </div>
+                  <button type="submit" class="btn btn-dark wr-btn">Sign In</button>
+                </form>
+                <p>Don't have an account yet ? </p>
+                  <a href="/signup" class="sign-up">Create one now</a>
+              </div>
+
+              <div class="form-wrap sign-2">
+                <h3>Sign Up</h3>
+                <form action="/signup" method="POST">
+                  <div class="wrapper">
+                      <div class="input-data">
+                          <input type="text" name='name' required>
+                          <div class="underline"></div>
+                          <label>Name</label>
+                      </div>
+                  </div>
+                  <br>
+                  <div class="wrapper">
+                      <div class="input-data">
+                          <input type="email" name="email" required>
+                          <div class="underline"></div>
+                          <label>Email</label>
+                      </div>
+                  </div>
+                  <br>
+                  <div class="wrapper">
+                      <div class="input-data">
+                          <input type="password" name="password" required>
+                          <div class="underline"></div>
+                          <label>Password</label>
+                      </div>
+                  </div>
+                  <button type="submit" class="btn btn-dark wr-btn">Sign Up</button>
+                
+                </form>
+                <p>Alreay an user ? </p>
+                  <a href="/login" class="sign-in">Sign in now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
